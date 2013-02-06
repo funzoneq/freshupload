@@ -1,4 +1,7 @@
-freshupload
-===========
+Super simple picture uploader
 
-Simple Upload API
+- Expect no security. Only use this internally, with trusted users.
+
+Installation:
+
+pip install flask flask-upload
