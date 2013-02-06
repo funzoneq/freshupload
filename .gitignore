@@ -1,4 +1,4 @@
-static/*.jpg
+server/static/*.jpg
 
 *.py[cod]
 
