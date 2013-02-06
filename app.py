@@ -31,7 +31,7 @@ if __name__ == "__main__":
 	app.debug = True
 	app.host = '0.0.0.0'
 	app.port = '5000'
-	app.url = 'http://%s:%s' % (app.host, app.port)
+	app.url = 'http://%s' % platform.uname()[1]
 	app.instance_root = './static/'
 	app.secret_key = "7bH6^ugydHVVocwDjCb8y6n.L"
 	configure_uploads(app, photos)
