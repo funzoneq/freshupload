@@ -4,6 +4,6 @@
 
 ## Installation:
 
-pip install flask flask-upload
+ sudo /usr/bin/pip-python install flask Flask-Uploads
 
 You should run a nginx instance in front of this service, that (at the very least) handles /static/
