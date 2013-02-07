@@ -1,7 +1,8 @@
 from flask import Flask, request, url_for, render_template, flash, redirect, jsonify
 from flaskext.uploads import (UploadSet, configure_uploads, IMAGES, UploadNotAllowed)
 from werkzeug import secure_filename
-import platform;
+import platform, hashlib, datetime
+
 app = Flask(__name__)
 
 photos = UploadSet('photos', IMAGES, default_dest=lambda app: app.instance_root)
@@ -17,7 +18,8 @@ def view(filename):
 @app.route('/v1/api/upload', methods=['POST'])
 def upload():
 	if request.method == 'POST' and 'photo' in request.files:
-		filename = photos.save(request.files['photo'])
+		rand = hashlib.sha224(request.files['photo'].filename + str(datetime.datetime.now())).hexdigest()[:15]+"."
+		filename = photos.save(request.files['photo'], name=rand)
 		flash("Photo saved.")
 		result = {
 			"filename": filename,
