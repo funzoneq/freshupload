@@ -10,7 +10,7 @@ if len(sys.argv) < 2:
     sys.stderr.write('Usage: sys.argv[0] image.jpg')
     sys.exit(1)
 
-url = 'http://ops-arnoud-5f501c08.ewr01.tumblr.net/v1/api/upload'
+url = 'https://ops-arnoud-5f501c08.ewr01.tumblr.net/v1/api/upload'
 fn 	= sys.argv[1]
 
 r = requests.post(url, files={'photo': open(fn, 'rb')})
