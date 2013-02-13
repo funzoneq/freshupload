@@ -7,7 +7,7 @@ app = Flask(__name__)
 
 photos = UploadSet('photos', IMAGES, default_dest=lambda app: app.instance_root)
 
-@app.route("/")
+@app.route("/upload")
 def hello():
 	return render_template('upload.html')
 
